@@ -11,9 +11,9 @@ Features :
 3. File transfer incorporates ​MD5​ checksum​ to handle file transfer errors. 
  
 USAGE ::
-Run one server on one port and another server on another port(set PORT in server.c file eg 8000 & 8001)
-Now run two clients that connect to these ports (set PORT in client.c file eg 8001 & 8000)
-Now run commands on clients 
+1. Run one server on one port and another server on another port (set PORT in one server.c file as 8000 &  another server.c as 8001 )
+2. Now run two clients that connect to these ports (set PORT in one client.cpp file as 8001 & another as 8000)
+3. Now run commands on clients (remember we have one machine (server+client) at 8000 and another machine at 8001)
 
 
 List of Commands Supported : 
@@ -43,7 +43,8 @@ List of Commands Supported :
 	 	Output  : filename,  checksum  and  last​ modified  timestamp  of  all  the files in the shared directory. 
 
 3. FileDownload ​flag (args): as  the  name  suggests,  would  be  used  to  download files  from  the  shared  folder of connected user to our shared folder. the  flag  variable  can  take  the  value  ​TCP or  ​
-UDP  depending  on  the users request.
--- If  a  socket  is  not  available,  it  is  created  and  both  clients  use  this socket for file transfer. 
-		eg: $> FileDownload <filename> 
+UDP  depending  on  the users request. If  a  socket  is  not  available,  it  is  created  and  both  clients  use  this socket for file transfer.
+		
+		-- TCP 
+		eg: $> FileDownload TCP <filename> 
 		Output  :  ​contains  the  filename,  filesize,  last​ modified  timestamp  and the MD5​hash of the requested file.  
